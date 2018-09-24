@@ -1,0 +1,45 @@
+<html>
+<header class="header">
+    <h1>Exercise 2</h1>
+</header>
+
+<head>
+    <link rel="stylesheet" href="slideshow.css">
+</head>
+
+<div>
+<div><img id="slide" src="fileName" width="600" heigth="800"></div>
+
+
+<br>
+<button class="button" onclick="controller(2)">Previous</button>
+<button class="button" onclick="controller(1)">Next</button>
+
+</div>
+</html>
+
+<script>
+    slideArr= ["picture/DSC_0958.JPG", "picture/DSC_6797.JPG", "picture/DSC_6808.JPG", "picture/DSC_6861.JPG", "picture/DSC_6882.JPG"];
+    let slideIndex = 0;
+    let fileName ="picture/DSC_0958.JPG";
+    document.getElementById("slide").src = fileName;
+    function controller(a){
+     
+        if(a == 1){
+            slideIndex++;
+        }
+        if(a == 2){
+            slideIndex--;
+        }
+        if(slideIndex > 4){
+            slideIndex = 0;
+        }
+        if(slideIndex < 0){
+            slideIndex = 4;
+        }
+        fileName = slideArr[slideIndex];
+        document.getElementById("slide").src=fileName;
+        console.log(fileName);
+    }
+    
+</script>
